@@ -2,7 +2,10 @@ REPORTER ?= dot
 
 all: test
 
-test: 
+lint:
+	@./node_modules/.bin/jshint lib/
+
+test: lint
 	@./node_modules/.bin/mocha --reporter $(REPORTER)
 
-.PHONY: test
+.PHONY: lint test

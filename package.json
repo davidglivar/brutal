@@ -32,8 +32,13 @@
     "commander": "~2.1.0"
   },
   "devDependencies": {
-    "mocha": "~1.18.2",
-    "expect.js": "~0.3.1"
+    "expect.js": "~0.3.1",
+    "jshint": "^2.4.4",
+    "mocha": "~1.18.2"
   },
-  "readmeFilename": "README.md"
+  "jshintConfig": {
+    "boss": true,
+    "laxbreak": true,
+    "laxcomma": true
+  }
 }
