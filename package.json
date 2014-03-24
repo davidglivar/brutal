@@ -1,0 +1,39 @@
+{
+  "name": "brutal",
+  "version": "0.0.0",
+  "description": "Brutal is a sprite sheet generator for specific use-cases",
+  "main": "brutal.js",
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "bin": {
+    "brutal": "./bin/brutal"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:davidglivar/brutal.git"
+  },
+  "keywords": [],
+  "author": {
+    "name": "David Glivar",
+    "email": "davidglivar@gmail.com",
+    "url": "https://github.com/davidglivar"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davidglivar/brutal/issues"
+  },
+  "dependencies": {
+    "image-size": "~0.2.2",
+    "spritesmith": "~0.18.0",
+    "commander": "~2.1.0"
+  },
+  "devDependencies": {
+    "mocha": "~1.18.2",
+    "expect.js": "~0.3.1"
+  },
+  "readmeFilename": "README.md"
+}
