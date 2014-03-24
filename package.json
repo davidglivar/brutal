@@ -1,6 +1,6 @@
 {
   "name": "brutal",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Brutal is a sprite sheet generator for specific use-cases",
   "main": "brutal.js",
   "engines": {
