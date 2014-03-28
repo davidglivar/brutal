@@ -8,4 +8,8 @@ lint:
 test: lint
 	@./node_modules/.bin/mocha --reporter $(REPORTER)
 
-.PHONY: lint test
+watch-test:
+	@./node_modules/.bin/mocha --reporter min --watch
+
+
+.PHONY: lint test watch-test

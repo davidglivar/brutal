@@ -35,6 +35,47 @@ describe('utilities', function () {
     });
   });
 
+  describe('#isDirectory()', function () {
+    var path = require('path');
+    
+    it('is a function with an arity of 1', function () {
+      expect(typeof _.isDirectory).to.be('function');
+      expect(_.isDirectory.length).to.be(1);
+    });
+
+    it('returns false if the file is not a directory', function () {
+      var p = path.join(__dirname, 'images/circle@2x.png');
+      expect(_.isDirectory(p)).to.be(false);
+    });
+
+    it('returns true if the file is a directory', function () {
+      var p = path.join(__dirname, 'images/nested');
+      expect(_.isDirectory(p)).to.be(true);
+    });
+  });
+
+  describe('#isImage()', function () {
+
+    it('is a function with an arity of 1', function () {
+      expect(typeof _.isImage).to.be('function');
+      expect(_.isImage.length).to.be(1);
+    });
+
+    it('returns true for an acceptable image filename', function () {
+      var files = ['image.jpeg', 'image.jpg', 'image.gif', 'image.png', 'image@2x.png', 'image-2x.png'];
+      for (var i = 0, len = files.length; i < len; i++) {
+        expect(_.isImage(files[i])).to.be(true);
+      }
+    });
+
+    it('returns false for unacceptable image paths', function () {
+      var files = ['images', '/images', 'images.', 'images.txt'];
+      for (var i = 0, len = files.length; i < len; i++) {
+        expect(_.isImage(files[i])).to.be(false);
+      }
+    });
+  });
+
   describe('#key()', function () {
     
     it('is a function with an arity of 1', function () {

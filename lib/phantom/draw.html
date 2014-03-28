@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+  <canvas id="brutal-canvas"></canvas>
+  <script type="text/javascript">
+    window.draw = function (params) {
+      var canvas = document.getElementById('brutal-canvas')
+        , ctx = canvas.getContext('2d')
+        , sprites = params.sprites
+        , len = sprites.length
+        , counter = 0;
+
+      canvas.width = params.width;
+      canvas.height = params.height;
+
+      function draw() {
+        var data;
+        sprites.forEach(function (sprite) {
+          ctx.drawImage(sprite.img, sprite.x, sprite.y);
+        });
+        data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+        window.returned = JSON.stringify(Array.prototype.slice.call(data));
+      }
+
+      sprites.forEach(function (sprite) {
+        var img = new Image();
+        img.onload = function () {
+          counter += 1;
+          sprite.img = img;
+          if (counter === len) draw();
+        };
+        img.src = sprite.path;
+      });
+    };
+  </script>
+</body>
+</html>
