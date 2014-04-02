@@ -1,5 +1,5 @@
 var expect = require('expect.js')
-  , brutal = require('../brutal').init()
+  , brutal = require('../brutal').init({ margin: 0, padding: 0 })
   , Sprite = require('../lib/sprite');
 
 describe('Sprite', function () {
@@ -49,6 +49,27 @@ describe('Sprite', function () {
   });
 
   describe('#validate()', function () {
+    
+    it('is a function', function () {
+      expect(Sprite.prototype.validate).to.be.a('function');
+    });
 
+    it('does not create a validation message for a standard image', function () {
+      var len = brutal.validations.length
+        , s = new Sprite('./test/images/invalid/circle.png');
+      expect(brutal.validations.length).to.be(len);
+    });
+
+    it('does not create a validation message for a retina image with even dimensions', function () {
+      var len = brutal.validations.length
+        , s = new Sprite('./test/images/bucket_a/circle@2x.png');
+      expect(brutal.validations.length).to.be(len);
+    });
+
+    it('creates a validation message for a retina image with odd dimensions', function () {
+      var len = brutal.validations.length
+        , s = new Sprite('./test/images/invalid/circle@2x.png');
+      expect(brutal.validations.length).to.be(len+1);
+    });
   });
 });
