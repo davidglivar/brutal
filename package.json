@@ -44,6 +44,19 @@
     "boss": true,
     "laxbreak": true,
     "laxcomma": true,
-    "unused": true
+    "undef": true,
+    "unused": true,
+    "globals": {
+      "require": false,
+      "process": false,
+      "console": false,
+      "module": false,
+      "exports": false,
+      "phantom": false,
+      "window": false,
+      "setTimeout": false,
+      "alert": false,
+      "__dirname": false
+    }
   }
 }

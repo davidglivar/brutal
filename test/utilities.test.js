@@ -44,12 +44,12 @@ describe('utilities', function () {
     });
 
     it('returns false if the file is not a directory', function () {
-      var p = path.join(__dirname, 'images/circle@2x.png');
+      var p = path.join(__dirname, 'images/bucket_a/circle@2x.png');
       expect(_.isDirectory(p)).to.be(false);
     });
 
     it('returns true if the file is a directory', function () {
-      var p = path.join(__dirname, 'images/nested');
+      var p = path.join(__dirname, 'images/bucket_b');
       expect(_.isDirectory(p)).to.be(true);
     });
   });
@@ -83,17 +83,17 @@ describe('utilities', function () {
       expect(_.key.length).to.be(1);
     });
 
-    it('returns an object', function () {
+    it('returns a string', function () {
       var key = _.key('/path/to/an/image.png');
       expect(key).to.be.ok();
-      expect(typeof key).to.be('object');
+      expect(typeof key).to.be('string');
     });
 
     it('normalizes a filename without extention or retina id', function () {
-      expect(_.key('/path/to/an/image@2x.png')).to.eql({ key: 'image', retina: true });
-      expect(_.key('/path/image-2x.png')).to.eql({ key: 'image', retina: true });
-      expect(_.key('/path/image_2x.png')).to.eql({ key: 'image', retina: true });
-      expect(_.key('/path/image.png')).to.eql({ key: 'image', retina: false });
+      expect(_.key('/path/to/an/image@2x.png')).to.eql('image');
+      expect(_.key('/path/image-2x.png')).to.eql('image');
+      expect(_.key('/path/image_2x.png')).to.eql('image');
+      expect(_.key('/path/image.png')).to.eql('image');
     });
   });
 });
