@@ -76,6 +76,10 @@ describe('utilities', function () {
     });
   });
 
+  describe('#isRetina()', function () {
+    it('write a test for isRetina');
+  });
+
   describe('#key()', function () {
     
     it('is a function with an arity of 1', function () {
@@ -95,5 +99,9 @@ describe('utilities', function () {
       expect(_.key('/path/image_2x.png')).to.eql('image');
       expect(_.key('/path/image.png')).to.eql('image');
     });
+  });
+
+  describe('#template()', function () {
+    it('write a test for template');
   });
 });

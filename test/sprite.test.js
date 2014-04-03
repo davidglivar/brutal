@@ -15,6 +15,26 @@ describe('Sprite', function () {
     expect(s.emit).to.be.a('function');
   });
 
+  describe('#height()=', function () {
+    it('write a test');
+  });
+
+  describe('#width()=', function () {
+    it('write a test');
+  });
+
+  describe('#x()=', function () {
+    it('write a test');
+  });
+
+  describe('#y()=', function () {
+    it('write a test');
+  });
+
+  describe('#style()=', function () {
+    it('write a test');
+  });
+
   describe('STYLE_TEMPLATE', function () {
 
     it('is immutable', function () {

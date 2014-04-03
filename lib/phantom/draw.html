@@ -19,7 +19,7 @@
       function draw() {
         var data;
         sprites.forEach(function (sprite) {
-          ctx.drawImage(sprite.img, sprite.x, sprite.y);
+          ctx.drawImage(sprite.__img, sprite.__x, sprite.__y, sprite.__width, sprite.__height);
         });
         data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
         window.returned = JSON.stringify(Array.prototype.slice.call(data));
@@ -29,7 +29,7 @@
         var img = new Image();
         img.onload = function () {
           counter += 1;
-          sprite.img = img;
+          sprite.__img = img;
           if (counter === len) draw();
         };
         img.src = sprite.path;

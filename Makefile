@@ -1,4 +1,5 @@
 REPORTER ?= dot
+WATCH_REPORTER ?= min
 
 all: test
 
@@ -8,8 +9,8 @@ lint:
 test: lint
 	@./node_modules/.bin/mocha --reporter $(REPORTER)
 
-watch-test:
-	@./node_modules/.bin/mocha --reporter min --watch
+watch-test: lint
+	@./node_modules/.bin/mocha --reporter $(WATCH_REPORTER) --watch
 
 
 .PHONY: lint test watch-test
