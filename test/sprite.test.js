@@ -33,21 +33,6 @@ describe('Sprite', function () {
     });
   });
 
-  describe('#stylize()', function () {
-
-    it('is a function with an arity of 1', function () {
-      expect(Sprite.prototype.stylize).to.be.a('function');
-      expect(Sprite.prototype.stylize.length).to.be(1);
-    });
-
-    it('sets the value of a Sprite instances\' "style" value', function () {
-      var s = new Sprite('./test/images/bucket_a/circle.png')
-        , value = s.style;
-      s.stylize('/a/url');
-      expect(s.style).to.not.be(value);
-    });
-  });
-
   describe('#validate()', function () {
     
     it('is a function', function () {
