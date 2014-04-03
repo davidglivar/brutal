@@ -19,7 +19,7 @@
       function draw() {
         var data;
         sprites.forEach(function (sprite) {
-          ctx.drawImage(sprite.__img, sprite.__x, sprite.__y, sprite.__width, sprite.__height);
+          ctx.drawImage(sprite.__img, sprite.__x, sprite.__y, sprite.__naturalWidth, sprite.__naturalHeight);
         });
         data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
         window.returned = JSON.stringify(Array.prototype.slice.call(data));
