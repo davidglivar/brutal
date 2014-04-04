@@ -4,5 +4,5 @@ var brutal = require('./brutal').init({
   margin: 2,
   padding: 2
 });
-brutal.run(path.join(__dirname, '/test/images'));
+brutal.run(path.join(__dirname, 'test_images'));
 
