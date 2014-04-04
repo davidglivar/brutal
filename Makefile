@@ -4,13 +4,16 @@ WATCH_REPORTER ?= min
 all: test
 
 lint:
-	@./node_modules/.bin/jshint lib/
+	@NODE_ENV=test ./node_modules/.bin/jshint lib/
 
 test: lint
-	@./node_modules/.bin/mocha --reporter $(REPORTER)
+	@NODE_ENV=test ./node_modules/.bin/mocha --reporter $(REPORTER)
 
-watch-test: lint
+test-w: lint
 	@./node_modules/.bin/mocha --reporter $(WATCH_REPORTER) --watch
 
+test-cov:
+	@jscoverage --no-highlight lib lib-cov
+	@BRUTAL_COV=1 ./node_modules/.bin/mocha --reporter html-cov > coverage.html
 
-.PHONY: lint test watch-test
+.PHONY: lint test test-w

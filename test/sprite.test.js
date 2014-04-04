@@ -1,6 +1,8 @@
+var lib = process.env.BRUTAL_COV ? 'lib-cov' : 'lib';
+
 var expect = require('expect.js')
   , brutal = require('../brutal').init({ margin: 0, padding: 0 })
-  , Sprite = require('../lib/sprite');
+  , Sprite = require('../'+lib+'/sprite');
 
 describe('Sprite', function () {
   

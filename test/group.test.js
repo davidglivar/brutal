@@ -1,7 +1,9 @@
+var lib = process.env.BRUTAL_COV ? 'lib-cov' : 'lib';
+
 var expect = require('expect.js')
-  , _ = require('../lib/utilities')
+  , _ = require('../'+lib+'/utilities')
   , brutal = require('../brutal')
-  , Group = require('../lib/group');
+  , Group = require('../'+lib+'/group');
 
 describe('Group', function () {
   
