@@ -1,6 +1,5 @@
 .DS_Store
 lib-cov/
-coverage.html
 node_modules/
 npm-debug.log
 test_output/
